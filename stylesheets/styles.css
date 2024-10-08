@@ -1,0 +1,184 @@
+.image-container {
+    position: relative;
+    /* width: 100%; Ensures the container is full width */
+}
+
+.imag_s {
+    width: 100%; /* Full width of the viewport */
+    height: auto; /* Adjusts the height automatically to maintain aspect ratio */
+    display: block;
+    position: relative;
+}
+
+.tag {
+    position: absolute;
+    top: 50%; /* Vertically center the text */
+    left: 50%; /* Horizontally center the text */
+    transform: translate(-50%, -50%); /* Centers the text */
+    color: black; /* Adjust text color */
+    font-size: 3rem; /* Adjust font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for readability */
+}
+/* .myimage{ */
+    /* height: 350px;
+    width: 150px;
+    position: absolute;
+    left: 70%;
+    top: 35%;
+    
+    /* align-self: center; */
+/* } */ 
+.myimage{
+    height: 370px;
+    width: 250px;
+    position: absolute;
+    top: 40%;
+    right: 4%;
+    border-radius: 40%;
+}
+.skills{
+    height: 300px;
+    /* width: 890px; */
+    background: linear-gradient(to right, #00ff87, #a7ffeb);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.skill{
+    background: linear-gradient(to right, #fff95b, #fff9b1);
+    color: rgb(20, 20, 19);
+    font-size: 50px;
+    
+    border-radius: 10%;
+}
+.section{
+    background-color: #00ff87;
+}
+.education {
+    /* background-color: red; */
+    width: 900px; /* Adjust if necessary */
+    display: grid;
+    grid-template-columns: repeat(2, 700px); /* Use fractional units for responsive layout */
+    grid-template-rows: repeat(2, 400px); /* Keep the rows as specified */
+    gap: 10px; /* Optional: adds space between grid items */
+}
+
+.graduation {
+    letter-spacing: 1px;
+    text-align: center;
+    grid-area: 1 / 1 / 2 / 3; /* Correcting the span to ensure it covers two columns */
+    border: 3px solid black;
+    background: linear-gradient(to right, #00ff87, #65d8bd);
+}
+
+.inter {
+    letter-spacing: 1px;
+    text-align: center;
+    grid-area: 2 / 1 / 3 / 2; /* Adjusted to cover the first column */
+    border: 3px solid black;
+    background: linear-gradient(to right, #00ff87, #a7ffeb);
+}
+
+.ssc {
+    letter-spacing: 1px;
+    text-align: center;
+    grid-area: 2 / 2 / 3 / 3; /* Adjusted to cover the second column */
+    border: 3px solid black;
+    background: linear-gradient(to right, #00ff87, #a7ffeb);
+}
+.head{
+    color: purple;
+}
+.about-section {
+    padding: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.about-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-text h1 {
+    font-size: 36px;
+    background: linear-gradient(to right, #1e90ff, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-photo {
+    flex: 0 0 200px; /* This keeps the photo a fixed size */
+}
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.about{
+    font-family: sans-serif; font-size: x-large;
+    text-align: center;
+    list-style-type: none;
+    padding-top: 3%;
+   
+}
+#a1{
+    border: 2px solid black;
+}
+#a11{
+    background-color: #00ff87;
+}
+/* .aboutme{
+    display: flex;
+    column-gap: 23px;
+} */
+.image_para{
+    border:  2px solid black;
+    text-align: center;
+    height: 400px;
+
+}
+/* #image{
+    grid-area: 1/4/2/4;
+    height: 300px;
+    width: 300px;
+    border-radius: 30%;
+    padding-top: 10%;
+} */
+#aboutme{
+    grid-area: 1/1/1/3;
+}
+#a{
+    color: red;
+    padding-bottom: 2%;
+}
+.card {
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.btng{
+    background-color: rgb(9, 9, 222);
+    color: white;
+    text-align: center;
+    border: 2px solid blue;
+    margin-top: 2%;
+    margin-left: 30%;
+}
+.shadow{
+    box-shadow: 0 4px 15px rgba(239, 80, 80, 0.5);
+}
