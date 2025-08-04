@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 30px;">
+<div style="text-align: center; background-color: #4A90E2; padding: 20px; color: white;">
+    <h1 style="margin: 0;">Admin Panel - Enter Portfolio Details</h1>
+  </div>
+
+  <div style="max-width: 800px; margin: 40px auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+    <!-- Intro Section -->
+    <h2 style="border-bottom: 2px solid #4A90E2; padding-bottom: 10px;">Intro Details</h2>
+    <input type="text" placeholder="Your Name (Header)" style="width: 100%; padding: 10px; margin: 10px 0;" />
+    <input type="text" placeholder="Your Tagline / Quote" style="width: 100%; padding: 10px; margin: 10px 0;" />
+    <input type="file" accept="image/*" style="margin: 10px 0;" />
+
+    <!-- About Me -->
+    <h2 style="border-bottom: 2px solid #4A90E2; padding-bottom: 10px;">About Me</h2>
+    <textarea rows="5" placeholder="Write about yourself..." style="width: 100%; padding: 10px; margin: 10px 0;"></textarea>
+
+    <!-- Skills -->
+    <h2 style="border-bottom: 2px solid #4A90E2; padding-bottom: 10px;">Skills</h2>
+    <input type="text" placeholder="Add skills comma-separated (e.g., Java, Spring Boot, React)" style="width: 100%; padding: 10px; margin: 10px 0;" />
+
+
+  <!-- Projects Section -->
+  <div style="margin-bottom: 40px;">
+    <h2>Projects 
+      <button onclick="toggleProjectForm()" style="float: right; font-size: 20px; cursor: pointer;">+</button>
+    </h2>
+    
+    <div id="project-form" style="display: none; margin-top: 10px; padding: 15px; border: 1px solid #ccc;">
+      <input id="project-head" placeholder="Project Title" style="width: 100%; margin-bottom: 10px; padding: 8px;" />
+      <input id="project-link" placeholder="Project Link" style="width: 100%; margin-bottom: 10px; padding: 8px;" />
+      <textarea id="project-desc" placeholder="Project Description" style="width: 100%; margin-bottom: 10px; padding: 8px;"></textarea>
+      <input type="file" id="project-image" accept="image/*" style="margin-bottom: 10px;" />
+      <button onclick="addProject()" style="padding: 8px 20px;">Add Project</button>
+    </div>
+
+    <ul id="project-list" style="margin-top: 15px; padding-left: 20px;"></ul>
+  </div>
+
+  <!-- Footer Links Section -->
+  <div style="margin-bottom: 40px;">
+    <h2>Footer Links 
+      <button onclick="toggleFooterForm()" style="float: right; font-size: 20px; cursor: pointer;">+</button>
+    </h2>
+    
+    <div id="footer-form" style="display: none; margin-top: 10px; padding: 15px; border: 1px solid #ccc;">
+      <input id="footer-text" placeholder="Text (e.g. GitHub)" style="width: 100%; margin-bottom: 10px; padding: 8px;" />
+      <input id="footer-link" placeholder="URL (e.g. https://github.com)" style="width: 100%; margin-bottom: 10px; padding: 8px;" />
+      <button onclick="addFooterLink()" style="padding: 8px 20px;">Add Link</button>
+    </div>
+
+    <ul id="footer-list" style="margin-top: 15px; padding-left: 20px;"></ul>
+  </div>
+
+  <!-- Notices Section -->
+  <div style="margin-bottom: 40px;">
+    <h2>Notices 
+      <button onclick="toggleNoticeForm()" style="float: right; font-size: 20px; cursor: pointer;">+</button>
+    </h2>
+
+    <div id="notice-form" style="display: none; margin-top: 10px; padding: 15px; border: 1px solid #ccc;">
+      <input id="notice-text" placeholder="Notice Title" style="width: 100%; margin-bottom: 10px; padding: 8px;" />
+      <input id="notice-link" placeholder="URL (optional)" style="width: 100%; margin-bottom: 10px; padding: 8px;" />
+      <button onclick="addNotice()" style="padding: 8px 20px;">Add Notice</button>
+    </div>
+
+    <ul id="notice-list" style="margin-top: 15px; padding-left: 20px;"></ul>
+  </div>
+
+  <h2 style="border-bottom: 2px solid #4A90E2; padding-bottom: 10px;">Download Resume</h2>
+<input type="text" id="resume-name" placeholder="File Name (Header)" style="width: 100%; padding: 10px; margin: 10px 0;" />
+<input type="text" id="resume-type" placeholder="File Type" style="width: 100%; padding: 10px; margin: 10px 0;" />
+<input type="file" id="resume-file" style="margin: 10px 0;" />
+
+
+  <script>
+    // Project Form Toggle & Add
+    const projectListData = []; // for later use in submit
+    function toggleProjectForm() {
+      const form = document.getElementById('project-form');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function addProject() {
+  const head = document.getElementById('project-head').value.trim();
+  const link = document.getElementById('project-link').value.trim();
+  const desc = document.getElementById('project-desc').value.trim();
+  const fileInput = document.getElementById('project-image');
+  const file = fileInput.files[0];
+
+  if (!head || !desc) return alert("Please fill at least title and description.");
+  if (!file) return alert("Please select an image.");
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const base64Image = e.target.result;
+
+    // Add to projectListData for later submission
+    const project = {
+      head,
+      description: desc,
+      link,
+      image: base64Image
+    };
+    projectListData.push(project);
+
+    // Display in UI
+    const ul = document.getElementById('project-list');
+    const li = document.createElement('li');
+    li.innerHTML = `<strong>${head}</strong><br>${desc}<br><a href="${link}" target="_blank">${link}</a><br><img src="${base64Image}" style="max-width: 150px; margin-top: 5px;"><br><br>`;
+    ul.appendChild(li);
+
+    // Clear fields
+    document.getElementById('project-head').value = '';
+    document.getElementById('project-link').value = '';
+    document.getElementById('project-desc').value = '';
+    fileInput.value = '';
+  };
+
+  reader.readAsDataURL(file); // triggers Base64 conversion
+}
+
+    // Footer Link Form Toggle & Add
+    function toggleFooterForm() {
+      const form = document.getElementById('footer-form');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function addFooterLink() {
+      const text = document.getElementById('footer-text').value.trim();
+      const link = document.getElementById('footer-link').value.trim();
+
+      if (!text || !link) return alert("Please fill both text and link.");
+
+      const ul = document.getElementById('footer-list');
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${link}" target="_blank">${text}</a>`;
+      ul.appendChild(li);
+
+      document.getElementById('footer-text').value = '';
+      document.getElementById('footer-link').value = '';
+    }
+
+    // Notice Form Toggle & Add
+    function toggleNoticeForm() {
+      const form = document.getElementById('notice-form');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function addNotice() {
+      const text = document.getElementById('notice-text').value.trim();
+      const link = document.getElementById('notice-link').value.trim();
+
+      if (!text) return alert("Please enter notice text.");
+
+      const ul = document.getElementById('notice-list');
+      const li = document.createElement('li');
+      if (link) {
+        li.innerHTML = `<a href="${link}" target="_blank">${text}</a>`;
+      } else {
+        li.innerText = text;
+      }
+      ul.appendChild(li);
+
+      document.getElementById('notice-text').value = '';
+      document.getElementById('notice-link').value = '';
+    }
+
+  function submitAllData() {
+  const header = document.querySelector('input[placeholder="Your Name (Header)"]').value.trim();
+  const quote = document.querySelector('input[placeholder="Your Tagline / Quote"]').value.trim();
+
+  const introFile = document.querySelectorAll('input[type="file"]')[0];
+  const resumeFile = document.getElementById("resume-file");
+const resumeName = document.getElementById("resume-name").value.trim();
+const resumeType = document.getElementById("resume-type").value.trim();
+ const aboutContent = document.querySelector('textarea[placeholder="Write about yourself..."]').value.trim();
+  const skills = document.querySelector('input[placeholder*="skills"]').value.split(',').map(skill => skill.trim()).filter(Boolean);
+
+  const footerItems = [];
+  document.querySelectorAll('#footer-list li a').forEach(a => {
+    footerItems.push({ text: a.textContent, link: a.href });
+  });
+
+  const noticeItems = [];
+  document.querySelectorAll('#notice-list li').forEach(li => {
+    const link = li.querySelector('a');
+    noticeItems.push({
+      name: link ? link.textContent : li.textContent,
+      link: link ? link.href : ""
+    });
+  });
+
+  const projectData = projectListData;
+
+  // Initialize both images as base64
+  let introPhotoBase64 = "";
+  let resumeBase64 = "";
+
+  function readFileAsBase64(file, callback) {
+    const reader = new FileReader();
+    reader.onload = () => callback(reader.result);
+    reader.readAsDataURL(file);
+  }
+
+  // Read both files and then submit
+  if (introFile.files.length > 0) {
+    readFileAsBase64(introFile.files[0], (base64) => {
+      introPhotoBase64 = base64;
+      if (resumeFile.files.length > 0) {
+        readFileAsBase64(resumeFile.files[0], (base64) => {
+          resumeBase64 = base64.split(',')[1]; // Remove "data:...base64,"
+          sendData();
+        });
+      } else {
+        sendData(); // No resume
+      }
+    });
+  } else {
+    if (resumeFile.files.length > 0) {
+      readFileAsBase64(resumeFile.files[0], (base64) => {
+        resumeBase64 = base64.split(',')[1];
+        sendData();
+      });
+    } else {
+      sendData();
+    }
+  }
+
+  function sendData() {
+    const payload = {
+      aboutMe: { content: aboutContent },
+      downloadResume: {
+        data: resumeBase64 || null,
+        fileName: resumeName,
+        fileType: resumeType
+      },
+      footer: { nodes: footerItems },
+      introTable: {
+        header: header,
+        quote: quote,
+        photo: introPhotoBase64
+      },
+      projects: {
+        projectLayoutList: projectData
+      },
+      skillsTable: {
+        skills: skills
+      },
+      notice: {
+        li: noticeItems
+      }
+    };
+
+    console.log("Final Payload:", payload);
+
+    fetch("http://localhost:4509/Personal-portfolio/add-Data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(res => res.text())
+      .then(response => {
+        alert("Data submitted successfully!");
+        console.log(response);
+      })
+      .catch(error => {
+        console.error("Error submitting data:", error);
+        alert("Submission failed.");
+      });
+  }
+}
+
+
+  </script>
+  <div style="text-align: center; margin-top: 40px;">
+  <button onclick="submitAllData()" style="padding: 12px 25px; background-color: #4A90E2; color: white; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">
+    Submit All Data
+  </button>
+</div>
+</body>
+</html>

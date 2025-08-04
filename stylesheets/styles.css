@@ -182,3 +182,772 @@
 .shadow{
     box-shadow: 0 4px 15px rgba(239, 80, 80, 0.5);
 }
+
+.shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.imag_s {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.adjust {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.myimage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+/* Responsive for phones */
+@media (max-width: 768px) {
+  .adjust {
+    position: static;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .myimage {
+    width: 90px;
+    height: 90px;
+  }
+
+  .tag {
+    font-size: 1rem;
+  }
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.imag_s {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.imag_s {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px; /* optional: for rounded corners */
+}
+.image-container {
+  width: 100%;
+  max-width: 1200px; /* optional */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .imag_s {
+    width: 100%;
+    height: auto;
+  }
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.skill-badge {
+  background: #f0f0f0;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.skill-badge:hover {
+  transform: scale(1.1);
+  background-color: #dfefff;
+  color: #007acc;
+}
+
+@media (max-width: 600px) {
+  .skill-badge {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+
+.project-section {
+  background: linear-gradient(135deg, #00ff87, #00c4ff);
+  padding: 50px 20px;
+  border: 2px solid black;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #246888;
+  margin-bottom: 40px;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.read-more-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #246888;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #1b4d6d;
+}
+
+
+
+
+
+.intro-section {
+  background-image: url('../Images/pexels-fauxels-3184460.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.intro-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* makes it responsive on smaller screens */
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 250px;
+  color: #000; /* text color */
+  font-size: 1.2rem;
+}
+
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 250px;
+}
+
+.intro-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+
+/* ----------------------This is the CSS for the skills section---------------------- */
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.skill-item {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* ----------------------------About Me Section CSS---------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------Mail Sender----------------- */
+
+
+
+/* Contact section layout */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 6px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Contact form styling */
+.contact-form {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.form-title {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.send-btn {
+  width: 150px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .footer-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .send-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+/* Center the Admin button on screen */
+
+.intro-section {
+  background-image: url('../Images/pexels-fauxels-3184460.jpg');
+  background-size: cover;
+  background-position: center;
+  
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  width: 130%;           /* Matches your notice width */
+  max-width: 1360px;    /* Prevents too much stretch on wide screens */
+  margin: 40px auto;    /* Centers horizontally */
+  overflow: hidden;     /* Keeps internal elements contained */
+}
+
+
+.intro-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 300px;
+  color: #db0c16;
+  text-align: center;
+  /* font-family: 'Segoe UI'; Modern and clean font */
+  font-size: 1.5rem; /* Slightly larger font size */
+  font-weight: 600; /* Semi-bold for better emphasis */
+  letter-spacing: 1px; /* Slight spacing for better readability */
+}
+
+
+#name, #role {
+  font-size: 2.0rem; /* bigger text */
+  font-weight: bold;
+  font-family: 'georgia', serif; /* Elegant serif font */
+  margin: 10px 0;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* optional for contrast */
+}
+
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+}
+
+#profile-image {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 5px solid white;
+}
+#a11 {
+  width: 97%;                /* Stretch width similar to notice box */
+  max-width: 1400px;         /* Optional: Controls max expansion on big screens */
+  margin: 40px auto;         /* Center it */
+  padding: 40px;             /* Adds inner spacing */
+  border-radius: 20px;       /* Rounded corners like intro-section */
+  box-shadow: 0 10px 25px rgba(66, 62, 62, 0.2); /* Nice shadow like intro */
+  background-color: #f9f9f9; /* Light background to match boxy look */
+}
+
+#a11 {
+  width: 97%;
+  max-width: 1360px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+}
+
+.aboutme-section {
+  width: 95%;
+  max-width: 1360px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.aboutme-content {
+  text-align: center;
+}
+
+.aboutme-content h1.head {
+  font-size: 2.5rem;
+  color: #00796b; /* deep teal for highlight */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+#about-paragraph p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  padding: 0 20px;
+}
+.aboutme-section {
+  min-height: 500px;  /* Try increasing to 600px or more */
+}
+
+.about-section {
+  background: linear-gradient(to right, #e0f7fa, #ffffff); /* beautiful light background */
+  padding: 5px 40px;        /* Top-Bottom: 60px, Left-Right: 40px */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* same shadow as other sections */
+  max-width: 1360px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.project-section {
+  background: linear-gradient(to right, #e0f7fa, #ffffff); /* same soft background */
+  padding: 60px 40px; /* Top-Bottom, Left-Right */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* consistent shadow */
+  max-width: 1360px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+.project-card {
+  background: linear-gradient(to bottom, transparent 0%, transparent 50%, #e0f7fa 50%, #e0f7fa 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 0;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h3,
+.project-card p,
+.project-card a {
+  padding: 0 20px;
+}
+
+.project-card h3 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1d3557;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #444;
+  margin: 10px 0;
+}
+
+.project-card a {
+  display: block;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+.education {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.education > div {
+  width: 100%;              /* Take full width */
+  max-width: 100%;          /* Prevent shrinking */
+  margin: 20px 0;           /* Space between cards */
+  padding: 30px;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  border: none;             /* Optional: remove border */
+}
+
+.education h2 {
+  color: purple;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.education h4, .education h6 {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.education h6 {
+  font-weight: normal;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+.education {
+  display: flex;
+  flex-direction: column;   /* Stack items vertically */
+  align-items: center;      /* Optional: center them */
+  width: 100%;
+}
+.contact {
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px auto;
+  width: 97%;
+  max-width: 1590px;
+}
+.contact-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #6a1b9a;
+  margin-bottom: 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+form#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form#contactForm input,
+form#contactForm textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.send-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+nav.navbar {
+  background: linear-gradient(to right, #e0f7fa, #ffffff); /* Gradient */
+  padding: 15px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  width: 95%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #000;
+  font-size: 18px;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.nav-link {
+  color: #6a1b9a;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #4a148c;
+  text-decoration: underline;
+}
+#admin-login {
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.banner {
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px auto;
+  width: 95%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.banner h2 {
+  font-size: 28px;
+  color: #4a148c;
+  margin-bottom: 8px;
+}
+
+.banner p {
+  font-size: 16px;
+  color: #333;
+}
